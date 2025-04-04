@@ -25,10 +25,11 @@ Sou formado em **Análise e Desenvolvimento de Sistemas** e atualmente curso **G
 
 ## 🖼️ Prévia
 <div>
-  <img src="https://i.postimg.cc/wjFVwt2D/vitor-1.png" width="150px" align="right" borderRadius="100px" />
+
+  <img src="https://i.postimg.cc/7hnbYGB5/057de9e3-30be-43c5-9f44-458b90c15dbd.jpg"  />
 
 </div>
-![image](https://github.com/user-attachments/assets/353c06d2-3c6d-4911-85bc-a0d9298f6898)
+
 
 ---
 
