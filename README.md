@@ -24,12 +24,11 @@ Sou formado em **Análise e Desenvolvimento de Sistemas** e atualmente curso **G
 - Formulário de contato que envia mensagem via **WhatsApp**
 
 ## 🖼️ Prévia
+<div>
+  <img src="https://i.postimg.cc/wjFVwt2D/vitor-1.png" width="150px" align="right" borderRadius="100px" />
 
-![Imagem do Portfólio](./img/vitor%20Avelino.jpeg)
-
-## 📱 Contato
-
-Caso queira falar comigo, pode usar o formulário que redireciona para meu WhatsApp ou me encontrar pelo número: `+55 11 96298-2118`.
+</div>
+![image](https://github.com/user-attachments/assets/353c06d2-3c6d-4911-85bc-a0d9298f6898)
 
 ---
 
