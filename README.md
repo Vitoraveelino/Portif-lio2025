@@ -21,7 +21,7 @@ Sou formado em **Análise e Desenvolvimento de Sistemas** e atualmente curso **G
   - Jogo de Adivinhação
   - Simulador de Empréstimo
 - Galeria com certificados (Python, Java, Engenharia de Software)
-- Formulário de contato que envia mensagem via **WhatsApp**
+
 
 ## 🖼️ Prévia
 <div>
