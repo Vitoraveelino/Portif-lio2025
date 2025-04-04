@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Crachá Interativo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #2c3e50, #4ca1af);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cordao {
+            width: 4px;
+            height: 100px;
+            background: #555;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+            transform-origin: top;
+            transition: transform 0.2s ease-out;
+        }
+
+        .cracha {
+            width: 160px;
+            height: 220px;
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            cursor: grab;
+            user-select: none;
+        }
+
+        .cracha img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cordao" id="cordao"></div>
+    <div class="cracha" id="cracha">
+        <img src="https://via.placeholder.com/100" alt="Foto de perfil">
+        <h3>Vitor Avelino</h3>
+        <p>Desenvolvedor Back-End</p>
+    </div>
+
+    <script>
+        const cracha = document.getElementById("cracha");
+        const cordao = document.getElementById("cordao");
+        let isDragging = false;
+        let offsetX, offsetY;
+        let startX, startY;
+
+        cracha.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            startX = cracha.offsetLeft;
+            startY = cracha.offsetTop;
+            offsetX = e.clientX - cracha.getBoundingClientRect().left;
+            offsetY = e.clientY - cracha.getBoundingClientRect().top;
+            cracha.style.transition = "none";
+            cordao.style.transition = "none";
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (isDragging) {
+                let newX = e.clientX - offsetX;
+                let newY = e.clientY - offsetY;
+                cracha.style.left = `${newX}px`;
+                cracha.style.top = `${newY}px`;
+                let distance = Math.min(1.5, (newY - startY) / 100);
+                cordao.style.transform = `translateX(-50%) scaleY(${1 + distance}) rotate(${(newX - startX) / 30}deg)`;
+            }
+        });
+
+        document.addEventListener("mouseup", () => {
+            if (isDragging) {
+                isDragging = false;
+                cracha.style.transition = "top 0.5s cubic-bezier(0.3, 1.5, 0.3, 1), left 0.5s cubic-bezier(0.3, 1.5, 0.3, 1)";
+                cordao.style.transition = "transform 0.5s cubic-bezier(0.3, 1.5, 0.3, 1)";
+                cracha.style.top = "100px";
+                cracha.style.left = "50%";
+                cracha.style.transform = "translate(-50%, 0)";
+                cordao.style.transform = "translateX(-50%) scaleY(1) rotate(0deg)";
+            }
+        });
+    </script>
+</body>
+</html>
